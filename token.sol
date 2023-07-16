@@ -24,4 +24,9 @@ contract Token {
 
         return true;
     }
+
+    function getRandomNumber() public view returns (uint256) {
+        uint256 randomNumber = uint256(keccak256(abi.encodePacked(block.timestamp, block.difficulty, msg.sender)));
+        return randomNumber;
+    }
 }
